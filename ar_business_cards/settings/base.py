@@ -23,7 +23,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'ar_business_cards.apps.landing',
     'ar_business_cards.apps.accounts',
+    'ar_business_cards.apps.core'
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -152,5 +154,10 @@ MEDIA_ROOT = BASE_DIR.parent.parent / 'media'
 # ==============================================================================
 # FIRST-PARTY SETTINGS
 # ==============================================================================
+LOGIN_REDIRECT_URL = '/dashboard/'
+LOGOUT_REDIRECT_URL = '/'
+
+# Redirect if not authenticated
+LOGIN_URL = 'login'
 
 # SIMPLE_ENVIRONMENT = config('SIMPLE_ENVIRONMENT', default='local')

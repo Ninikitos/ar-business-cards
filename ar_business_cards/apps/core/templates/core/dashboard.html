@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block content %}
+    <h1>Dashboard</h1>
+    <p> Hey,
+        {% if user.is_authenticated %}
+    	    {{ user.username }}
+        {% endif %}
+    </p>
+    <form method="post" action="{% url 'accounts:logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-outline-primary btn-sm">Logout</button>
+    </form>
+{% endblock %}
